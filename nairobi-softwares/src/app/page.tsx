@@ -134,7 +134,7 @@ export default function HomePage() {
             <Badge className="bg-emerald-100 text-emerald-700">Our Work</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold">See Our Solutions in Action</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Watch how we've transformed businesses with cutting-edge software solutions
+              Watch how we&apos;ve transformed businesses with cutting-edge software solutions
             </p>
           </div>
 
@@ -410,9 +410,9 @@ export default function HomePage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-emerald-100 text-emerald-700">About Us</Badge>
-                <h2 className="text-3xl lg:text-5xl font-bold">Innovating Africa's Digital Future</h2>
+                <h2 className="text-3xl lg:text-5xl font-bold">Let&apos;s Build Something Amazing</h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Based in Nairobi, we're a team of passionate developers and designers committed to building
+                  Based in Nairobi, we&apos;re a team of passionate developers and designers committed to building
                   world-class software solutions that drive business growth.
                 </p>
               </div>
@@ -471,7 +471,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center space-y-4 mb-16">
             <Badge className="bg-emerald-100 text-emerald-700">Contact Us</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold">Let's Build Something Amazing</h2>
+            <h2 className="text-3xl lg:text-5xl font-bold">Let&apos;s Build Something Amazing</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Ready to start your project? Get in touch with our team today.
             </p>
@@ -666,7 +666,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Nairobi Softwares. All rights reserved.</p>
+            <p> {new Date().getFullYear()} Nairobi Softwares. All rights reserved.</p>
           </div>
         </div>
       </footer>

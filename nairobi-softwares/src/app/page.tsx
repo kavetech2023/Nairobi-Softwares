@@ -135,7 +135,7 @@ export default function HomePage() {
                     <div className="h-4 bg-emerald-200 rounded w-1/2"></div>
                     <div className="h-4 bg-gray-200 rounded w-5/6"></div>
                     <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded p-3 text-white text-sm">
-                      &quot;Hi! I'&apos;m your AI assistant. How can I help you today?&quot;
+                      &quot;Hi! I&apos;m your AI assistant. How can I help you today?&quot;
                     </div>
                     <div className="text-xs text-gray-500">+47 leads captured today</div>
                   </div>

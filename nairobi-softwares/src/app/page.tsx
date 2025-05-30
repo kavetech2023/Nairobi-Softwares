@@ -7,7 +7,6 @@ import {
   ArrowRight,
   CheckCircle,
   Code,
-  Globe,
   Smartphone,
   Zap,
   Users,
@@ -25,7 +24,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
-        <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
               <Code className="w-5 h-5 text-white" />
@@ -59,50 +58,63 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
-                  🚀 Leading Software Agency in East Africa
+              <div className="space-y-6">
+                <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100 text-lg px-4 py-2">
+                  🚀 AI-Powered Websites in Just 2 Days
                 </Badge>
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                  Build the{" "}
+                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                  Get Your{" "}
                   <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    Future
+                    AI-Enhanced
                   </span>{" "}
-                  with Code
+                  Website in 48 Hours
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  We craft exceptional digital experiences through innovative software solutions. From web applications
-                  to mobile apps, we bring your vision to life.
+                <p className="text-2xl text-gray-600 leading-relaxed font-medium">
+                  We build lightning-fast websites with embedded AI that automatically tracks customers, boosts your
+                  sales, and grows your business while you sleep.
                 </p>
+                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-xl border-l-4 border-emerald-500">
+                  <h3 className="text-xl font-bold text-emerald-800 mb-2">🎯 What You Get:</h3>
+                  <ul className="space-y-2 text-emerald-700 font-medium">
+                    <li>✅ Complete website delivered in 2 days</li>
+                    <li>✅ AI chatbot that converts visitors to customers</li>
+                    <li>✅ Smart analytics that track every lead</li>
+                    <li>✅ Automated sales funnels built-in</li>
+                  </ul>
+                </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700"
+                  className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-lg px-8 py-4 h-auto"
                 >
-                  Start Your Project
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  Get My Website in 2 Days
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50">
-                  <Play className="mr-2 w-4 h-4" />
-                  Watch Demo
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 text-lg px-8 py-4 h-auto"
+                >
+                  <Play className="mr-2 w-5 h-5" />
+                  See AI Demo
                 </Button>
               </div>
               <div className="flex items-center space-x-8 pt-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-600">150+</div>
-                  <div className="text-sm text-gray-600">Projects Delivered</div>
+                  <div className="text-3xl font-bold text-emerald-600">2 Days</div>
+                  <div className="text-sm text-gray-600 font-medium">Average Delivery</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-600">98%</div>
-                  <div className="text-sm text-gray-600">Client Satisfaction</div>
+                  <div className="text-3xl font-bold text-emerald-600">300%</div>
+                  <div className="text-sm text-gray-600 font-medium">Sales Increase</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-600">5+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-3xl font-bold text-emerald-600">24/7</div>
+                  <div className="text-sm text-gray-600 font-medium">AI Working</div>
                 </div>
               </div>
             </div>
@@ -114,11 +126,18 @@ export default function HomePage() {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-emerald-500 rounded-full animate-pulse"></div>
+                      <div className="text-sm font-medium">AI Chatbot Active</div>
+                    </div>
                     <div className="h-4 bg-gray-200 rounded w-3/4"></div>
                     <div className="h-4 bg-emerald-200 rounded w-1/2"></div>
                     <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                    <div className="h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded w-1/3"></div>
+                    <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded p-3 text-white text-sm">
+                      &quot;Hi! I'&apos;m your AI assistant. How can I help you today?&quot;
+                    </div>
+                    <div className="text-xs text-gray-500">+47 leads captured today</div>
                   </div>
                 </div>
               </div>
@@ -129,11 +148,11 @@ export default function HomePage() {
 
       {/* Video Showcase Section */}
       <section id="portfolio" className="py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <Badge className="bg-emerald-100 text-emerald-700">Our Work</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold">See Our Solutions in Action</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Watch how we&apos;ve transformed businesses with cutting-edge software solutions
             </p>
           </div>
@@ -193,41 +212,50 @@ export default function HomePage() {
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700">Our Services</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold">What We Do Best</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive software solutions tailored to your business needs
+            <Badge className="bg-emerald-100 text-emerald-700 text-lg px-4 py-2">AI-Powered Solutions</Badge>
+            <h2 className="text-4xl lg:text-6xl font-bold">Websites That Sell While You Sleep</h2>
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
+              Every website we build comes with intelligent AI features that automatically convert visitors into paying
+              customers
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-transparent w-32 h-32 opacity-10"></div>
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center mb-4">
-                  <Globe className="w-6 h-6 text-white" />
+                  <Zap className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>Web Development</CardTitle>
-                <CardDescription>
-                  Modern, responsive websites and web applications built with the latest technologies
+                <CardTitle className="text-xl">AI-Enhanced Websites</CardTitle>
+                <CardDescription className="text-base">
+                  Smart websites that automatically capture leads, answer questions, and boost your sales 24/7
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    React & Next.js
+                    AI Chatbot Integration
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    E-commerce Solutions
+                    Smart Lead Tracking
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    CMS Development
+                    Automated Sales Funnels
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                    Real-time Analytics
                   </li>
                 </ul>
+                <div className="mt-4 p-3 bg-emerald-50 rounded-lg">
+                  <div className="text-sm font-semibold text-emerald-800">⚡ 2-Day Delivery Guaranteed</div>
+                </div>
               </CardContent>
             </Card>
 
@@ -288,43 +316,49 @@ export default function HomePage() {
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700">Pricing</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold">Choose Your Plan</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Transparent pricing for projects of all sizes</p>
+            <Badge className="bg-emerald-100 text-emerald-700 text-lg px-4 py-2">Simple Pricing</Badge>
+            <h2 className="text-4xl lg:text-6xl font-bold">Get Your AI Website in 2 Days</h2>
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
+              Choose your package and watch your business grow with AI-powered automation
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <Card className="border-2 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Starter</CardTitle>
+                <div className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block">
+                  ⚡ 2-Day Delivery
+                </div>
+                <CardTitle className="text-2xl">AI Starter</CardTitle>
                 <div className="text-4xl font-bold text-emerald-600">$2,500</div>
-                <CardDescription>Perfect for small businesses and startups</CardDescription>
+                <CardDescription className="text-base">Perfect for small businesses ready to automate</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Landing Page Design
+                    AI-Powered Landing Page
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Responsive Design
+                    Smart Lead Capture Forms
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Basic SEO Setup
+                    Basic AI Chatbot
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />2 Weeks Delivery
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
+                    48-Hour Delivery
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />1 Month Support
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />1 Month AI Support
                   </li>
                 </ul>
                 <Button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700">
-                  Get Started
+                  Start in 2 Days
                 </Button>
               </CardContent>
             </Card>
@@ -405,12 +439,12 @@ export default function HomePage() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-emerald-100 text-emerald-700">About Us</Badge>
-                <h2 className="text-3xl lg:text-5xl font-bold">Let&apos;s Build Something Amazing</h2>
+                <h2 className="text-3xl lg:text-5xl font-bold">Innovating Africa&apos;s Digital Future</h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Based in Nairobi, we&apos;re a team of passionate developers and designers committed to building
                   world-class software solutions that drive business growth.
@@ -468,16 +502,16 @@ export default function HomePage() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <Badge className="bg-emerald-100 text-emerald-700">Contact Us</Badge>
             <h2 className="text-3xl lg:text-5xl font-bold">Let&apos;s Build Something Amazing</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to start your project? Get in touch with our team today.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <div className="space-y-8">
               <Card className="p-6">
                 <form className="space-y-6">
@@ -574,7 +608,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
@@ -666,7 +700,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p> {new Date().getFullYear()} Nairobi Softwares. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Nairobi Softwares. All rights reserved.</p>
           </div>
         </div>
       </footer>

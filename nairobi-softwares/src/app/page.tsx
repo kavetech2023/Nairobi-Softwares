@@ -135,7 +135,7 @@ export default function HomePage() {
                     <div className="h-4 bg-emerald-200 rounded w-1/2"></div>
                     <div className="h-4 bg-gray-200 rounded w-5/6"></div>
                     <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded p-3 text-white text-sm">
-                      Hi! I&apos;m your AI assistant. How can I help you today?
+                      Hi, I &apos;m your AI assistant. How can I help you today.
                     </div>
                     <div className="text-xs text-gray-500">+47 leads captured today</div>
                   </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
                   ⚡ 2-Day Delivery
                 </div>
                 <CardTitle className="text-2xl">AI Starter</CardTitle>
-                <div className="text-4xl font-bold text-emerald-600">$2,500</div>
+                <div className="text-4xl font-bold text-emerald-600">Kshs 5,500</div>
                 <CardDescription className="text-base">Perfect for small businesses ready to automate</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -369,7 +369,7 @@ export default function HomePage() {
               </div>
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Professional</CardTitle>
-                <div className="text-4xl font-bold text-emerald-600">$8,500</div>
+                <div className="text-4xl font-bold text-emerald-600">Kshs 12,500</div>
                 <CardDescription>Ideal for growing businesses</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -552,7 +552,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Email Us</h3>
-                    <p className="text-gray-600">hello@nairobisoftwares.com</p>
+                    <p className="text-gray-600">kavetekevin@gmail.com</p>
                     <p className="text-gray-600">support@nairobisoftwares.com</p>
                   </div>
                 </div>
@@ -563,8 +563,8 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Call Us</h3>
-                    <p className="text-gray-600">+254 700 123 456</p>
-                    <p className="text-gray-600">+254 711 987 654</p>
+                    <p className="text-gray-600">+254 798 566 564</p>
+                    <p className="text-gray-600">+254 101 718 404</p>
                   </div>
                 </div>
 

@@ -127,7 +127,7 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  We Don't Just Build Websites, We{" "}
+                  We Don&#39;t Just Build Websites, We{" "}
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                     Build Success
                   </span>
@@ -212,7 +212,7 @@ export default function HomePage() {
                     </div>
                     <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
                       <p className="text-base font-medium">
-                        "Hi! I'm your AI assistant. Ready to boost your sales by 300%?"
+                        &quot;Hi! I&apos;m your AI assistant. Ready to boost your sales by 300%?&quot;
                       </p>
                     </div>
                     <div className="flex items-center justify-between">
@@ -318,7 +318,7 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold text-white">What Our Clients Say</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">Real stories from businesses we've transformed</p>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">Real stories from businesses we&#39;ve transformed</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -670,7 +670,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 <h2 className="text-4xl lg:text-6xl font-bold text-white">About Us</h2>
                 <p className="text-xl text-gray-400 leading-relaxed">
-                  Based in Nairobi, we're a team of passionate developers and designers committed to building
+                  Based in Nairobi, we&apos;re a team of passionate developers and designers committed to building
                   world-class software solutions that drive business growth across Africa and beyond.
                 </p>
               </div>
@@ -710,7 +710,7 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold">Let's Work Together</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">Let&apos;s Work Together</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to transform your business? Get in touch with our team today.
             </p>

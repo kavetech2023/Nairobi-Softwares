@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,302 +12,500 @@ import {
   Smartphone,
   Zap,
   Users,
-  Award,
   Play,
-  Star,
   Mail,
   Phone,
   MapPin,
+  ChevronDown,
+  Building2,
+  ShoppingCart,
+  Stethoscope,
+  GraduationCap,
+  Car,
+  Utensils,
+  Quote,
 } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/90 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
               <Code className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Nairobi Softwares
-            </span>
+            <span className="text-xl font-bold text-white">Nairobi Softwares</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#services" className="text-gray-600 hover:text-emerald-600 transition-colors">
-              Services
+            <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
+              <span>Services</span>
+              <ChevronDown className="w-4 h-4" />
+            </div>
+            <Link href="#portfolio" className="text-gray-300 hover:text-white transition-colors">
+              Our Works
             </Link>
-            <Link href="#portfolio" className="text-gray-600 hover:text-emerald-600 transition-colors">
-              Portfolio
+            <Link href="#about" className="text-gray-300 hover:text-white transition-colors">
+              About Us
             </Link>
-            <Link href="#pricing" className="text-gray-600 hover:text-emerald-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="#about" className="text-gray-600 hover:text-emerald-600 transition-colors">
-              About
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-emerald-600 transition-colors">
+            <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
               Contact
             </Link>
+            <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
+              <span>Resources</span>
+              <ChevronDown className="w-4 h-4" />
+            </div>
           </nav>
-          <Button className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700">
-            Get Started
-          </Button>
+          <Button className="bg-teal-500 hover:bg-teal-600 text-black font-semibold px-6">Work With Us</Button>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Hero Section - Starry */}
+      <section className="py-20 lg:py-32 relative overflow-hidden pt-32">
+        {/* Animated Stars Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
+          {/* Scientific Grid Pattern */}
+          <div
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.05)_0%,transparent_60%)]"
+            style={{ WebkitMaskImage: "url(/grid-mask.png)", maskImage: "url(/grid-mask.png)" }}
+          />
+
+          {/* Hexagon Pattern */}
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute opacity-20"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${50 + Math.random() * 100}px`,
+                height: `${50 + Math.random() * 100}px`,
+                backgroundImage: "url(/hexagon.svg)",
+                backgroundSize: "cover",
+                animation: `hexagonRotate ${10 + Math.random() * 20}s linear infinite`,
+              }}
+            />
+          ))}
+
+          {/* Circuit Board Lines */}
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute bg-cyan-500/5 w-full h-px"
+              style={{
+                top: `${Math.random() * 100}%`,
+                animation: `circuitSlide ${5 + Math.random() * 10}s linear infinite`,
+              }}
+            />
+          ))}
+
+          {/* Data Visualization Dots */}
+          {[...Array(40)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 rounded-full bg-cyan-400/50"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `dataPulse ${2 + Math.random() * 3}s ease-in-out infinite`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100 text-lg px-4 py-2">
-                  🚀 AI-Powered Websites in Just 2 Days
-                </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  Get Your{" "}
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                    AI-Enhanced
-                  </span>{" "}
-                  Website in 48 Hours
-                </h1>
-                <p className="text-2xl text-gray-600 leading-relaxed font-medium">
-                  We build lightning-fast websites with embedded AI that automatically tracks customers, boosts your
-                  sales, and grows your business while you sleep.
-                </p>
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-xl border-l-4 border-emerald-500">
-                  <h3 className="text-xl font-bold text-emerald-800 mb-2">🎯 What You Get:</h3>
-                  <ul className="space-y-2 text-emerald-700 font-medium">
-                    <li>✅ Complete website delivered in 2 days</li>
-                    <li>✅ AI chatbot that converts visitors to customers</li>
-                    <li>✅ Smart analytics that track every lead</li>
-                    <li>✅ Automated sales funnels built-in</li>
-                  </ul>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-xl rounded-full"></div>
+                  <Badge className="relative bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 backdrop-blur-sm px-4 py-2">
+                    ✨ AI-Powered Websites in 48 Hours
+                  </Badge>
                 </div>
+
+                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                  We Don't Just Build Websites, We{" "}
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                    Build Success
+                  </span>
+                </h1>
+
+                <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
+                  At Nairobi Softwares, we craft AI-powered websites that convert visitors into customers, delivered in
+                  just 48 hours with precision and excellence.
+                </p>
               </div>
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-lg px-8 py-4 h-auto"
-                >
-                  Get My Website in 2 Days
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-70"></div>
+                  <Button
+                    size="lg"
+                    className="relative bg-white hover:bg-gray-100 text-black font-semibold px-8 py-4 h-auto rounded-full shadow-2xl"
+                  >
+                    Work with us
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </div>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 text-lg px-8 py-4 h-auto"
+                  className="border-cyan-400/50 text-cyan-300 hover:bg-cyan-500/10 hover:text-cyan-200 px-8 py-4 h-auto rounded-full bg-transparent backdrop-blur-sm"
                 >
-                  <Play className="mr-2 w-5 h-5" />
-                  See AI Demo
+                  About Us
                 </Button>
               </div>
-              <div className="flex items-center space-x-8 pt-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-600">2 Days</div>
-                  <div className="text-sm text-gray-600 font-medium">Average Delivery</div>
+
+              <div className="flex items-center justify-center sm:justify-start space-x-12 pt-8">
+                <div className="text-center group">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    48h
+                  </div>
+                  <div className="text-sm text-gray-400 font-medium">Delivery Time</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-600">300%</div>
-                  <div className="text-sm text-gray-600 font-medium">Sales Increase</div>
+                <div className="text-center group">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    300%
+                  </div>
+                  <div className="text-sm text-gray-400 font-medium">Sales Boost</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-600">24/7</div>
-                  <div className="text-sm text-gray-600 font-medium">AI Working</div>
+                <div className="text-center group">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    24/7
+                  </div>
+                  <div className="text-sm text-gray-400 font-medium">AI Working</div>
                 </div>
               </div>
             </div>
+
             <div className="relative">
-              <div className="relative bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-8 shadow-2xl">
-                <div className="bg-white rounded-lg p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 blur-3xl rounded-full animate-pulse"></div>
+              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl p-10 shadow-2xl backdrop-blur-sm border border-cyan-500/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-400/5 rounded-3xl"></div>
+
+                {/* Floating Code Elements */}
+                <div className="absolute top-4 right-4 w-16 h-16 opacity-30">
+                  <div className="w-full h-full border border-cyan-400 rounded-lg animate-pulse">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full absolute top-1 left-1 animate-ping"></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full absolute bottom-1 right-1 animate-ping"></div>
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-emerald-500 rounded-full animate-pulse"></div>
-                      <div className="text-sm font-medium">AI Chatbot Active</div>
+                </div>
+
+                <div className="relative bg-gray-900/90 rounded-2xl p-8 space-y-6 shadow-inner border border-cyan-500/10">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-red-400 rounded-full shadow-lg animate-pulse"></div>
+                    <div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg animate-pulse"></div>
+                    <div className="w-4 h-4 bg-green-400 rounded-full shadow-lg animate-pulse"></div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg"></div>
+                      <div className="text-lg font-semibold text-cyan-200">AI Assistant Active</div>
                     </div>
-                    <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                    <div className="h-4 bg-emerald-200 rounded w-1/2"></div>
-                    <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                    <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded p-3 text-white text-sm">
-                      Hi, I &apos;m your AI assistant. How can I help you today.
+                    <div className="space-y-3">
+                      <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full w-3/4 animate-pulse"></div>
+                      <div className="h-4 bg-gradient-to-r from-cyan-600/50 to-blue-600/50 rounded-full w-1/2 animate-pulse"></div>
+                      <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full w-5/6 animate-pulse"></div>
                     </div>
-                    <div className="text-xs text-gray-500">+47 leads captured today</div>
+                    <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
+                      <p className="text-base font-medium">
+                        "Hi! I'm your AI assistant. Ready to boost your sales by 300%?"
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-cyan-300 font-medium flex items-center">
+                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                        +127 leads captured today
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes hexagonRotate {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          @keyframes circuitSlide {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+
+          @keyframes dataPulse {
+            0%,
+            100% {
+              opacity: 0.5;
+              transform: scale(1);
+            }
+            50% {
+              opacity: 1;
+              transform: scale(1.2);
+            }
+          }
+        `}</style>
       </section>
 
-      {/* Video Showcase Section */}
-      <section id="portfolio" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      {/* Industries Section - Light Grey */}
+      <section className="py-20 bg-gray-100 text-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700">Our Work</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold">See Our Solutions in Action</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">Industries We Serve</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Watch how we&apos;ve transformed businesses with cutting-edge software solutions
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="group hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="relative aspect-video bg-gradient-to-br from-emerald-500 to-teal-600 rounded-t-lg overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
-                      <Play className="w-6 h-6" />
-                    </Button>
-                  </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="font-semibold">E-Commerce Platform</h3>
-                    <p className="text-sm opacity-90">Full-stack web application</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600">
-                    A comprehensive e-commerce solution with real-time inventory management and payment integration.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-500 to-pink-600 rounded-t-lg overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
-                      <Play className="w-6 h-6" />
-                    </Button>
-                  </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="font-semibold">Mobile Banking App</h3>
-                    <p className="text-sm opacity-90">iOS & Android application</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600">
-                    Secure mobile banking application with biometric authentication and real-time transactions.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <Button variant="outline" size="lg" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50">
-              View All Projects
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 text-lg px-4 py-2">AI-Powered Solutions</Badge>
-            <h2 className="text-4xl lg:text-6xl font-bold">Websites That Sell While You Sleep</h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
-              Every website we build comes with intelligent AI features that automatically convert visitors into paying
-              customers
+              Delivering cutting-edge solutions across diverse sectors
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-transparent w-32 h-32 opacity-10"></div>
+            {[
+              { icon: ShoppingCart, title: "E-Commerce", desc: "Online stores with AI-powered recommendations" },
+              { icon: Stethoscope, title: "Healthcare", desc: "Patient management and telemedicine platforms" },
+              { icon: GraduationCap, title: "Education", desc: "Learning management systems and e-learning" },
+              { icon: Building2, title: "Real Estate", desc: "Property management and virtual tours" },
+              { icon: Car, title: "Automotive", desc: "Dealership websites and inventory management" },
+              { icon: Utensils, title: "Restaurants", desc: "Online ordering and reservation systems" },
+            ].map((industry, index) => (
+              <Card
+                key={index}
+                className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 group hover:border-teal-500/50"
+              >
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <industry.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl text-gray-900">{industry.title}</CardTitle>
+                  <CardDescription className="text-gray-600">{industry.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section - Dark */}
+      <section className="py-20 bg-black relative overflow-hidden">
+        {/* Subtle stars for testimonials */}
+        <div className="absolute inset-0">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-0.5 h-0.5 bg-white rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                opacity: 0.3,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl lg:text-6xl font-bold text-white">What Our Clients Say</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">Real stories from businesses we've transformed</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Johnson",
+                role: "CEO, TechStart Kenya",
+                image: "/placeholder.svg?height=80&width=80",
+                quote:
+                  "Nairobi Softwares delivered our AI-powered e-commerce platform in just 2 days. Our sales increased by 250% in the first month!",
+                rating: 5,
+              },
+              {
+                name: "Michael Ochieng",
+                role: "Founder, EduLearn Africa",
+                image: "/placeholder.svg?height=80&width=80",
+                quote:
+                  "The learning management system they built has revolutionized how we deliver education. The AI features are incredible!",
+                rating: 5,
+              },
+              {
+                name: "Amina Hassan",
+                role: "Director, HealthCare Plus",
+                image: "/placeholder.svg?height=80&width=80",
+                quote:
+                  "Our patient management system is now seamless. The 48-hour delivery promise was kept, and the quality exceeded expectations.",
+                rating: 5,
+              },
+            ].map((testimonial, index) => (
+              <Card
+                key={index}
+                className="bg-gray-900 border-gray-800 hover:border-teal-500/50 transition-all duration-500 group hover:scale-105"
+                style={{
+                  animation: `fadeInUp 0.6s ease-out ${index * 0.2}s both`,
+                }}
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                      <img
+                        src={testimonial.image || "/placeholder.svg"}
+                        alt={testimonial.name}
+                        className="relative w-16 h-16 rounded-full border-2 border-teal-500/50"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+
+                  <div className="relative mb-6">
+                    <Quote className="absolute -top-2 -left-2 w-8 h-8 text-teal-500/30" />
+                    <p className="text-gray-300 leading-relaxed pl-6">{testimonial.quote}</p>
+                  </div>
+
+                  <div className="flex space-x-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="w-5 h-5 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full"
+                        style={{
+                          animation: `starGlow 2s ease-in-out ${i * 0.1}s infinite alternate`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes starGlow {
+            from {
+              box-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+            }
+            to {
+              box-shadow: 0 0 20px rgba(251, 191, 36, 0.8);
+            }
+          }
+        `}</style>
+      </section>
+
+      {/* Services Section - Light Grey */}
+      <section id="services" className="py-20 bg-gray-100 text-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl lg:text-6xl font-bold">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive solutions designed to accelerate your digital transformation
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl">AI-Enhanced Websites</CardTitle>
-                <CardDescription className="text-base">
-                  Smart websites that automatically capture leads, answer questions, and boost your sales 24/7
+                <CardTitle className="text-xl text-gray-900">AI-Enhanced Websites</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Smart websites with embedded AI that automatically capture leads and boost conversions
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3 text-sm text-gray-600">
+                <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    AI Chatbot Integration
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
+                    48-hour delivery
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    Smart Lead Tracking
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
+                    AI chatbot integration
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    Automated Sales Funnels
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    Real-time Analytics
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
+                    Smart analytics
                   </li>
                 </ul>
-                <div className="mt-4 p-3 bg-emerald-50 rounded-lg">
-                  <div className="text-sm font-semibold text-emerald-800">⚡ 2-Day Delivery Guaranteed</div>
-                </div>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur">
+            <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
                   <Smartphone className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>Mobile Development</CardTitle>
-                <CardDescription>Native and cross-platform mobile applications for iOS and Android</CardDescription>
+                <CardTitle className="text-xl text-gray-900">Mobile Development</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Native and cross-platform mobile applications for iOS and Android
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
                     React Native
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    Flutter Development
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
+                    Flutter development
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    App Store Optimization
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
+                    App store optimization
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur">
+            <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                  <Code className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>Cloud Solutions</CardTitle>
-                <CardDescription>Scalable cloud infrastructure and deployment solutions</CardDescription>
+                <CardTitle className="text-xl text-gray-900">Cloud Solutions</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Scalable cloud infrastructure and deployment solutions
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
                     AWS & Azure
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
                     DevOps & CI/CD
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                    Database Management
+                    <CheckCircle className="w-4 h-4 text-teal-500 mr-3" />
+                    Database management
                   </li>
                 </ul>
               </CardContent>
@@ -314,121 +514,146 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      {/* Portfolio Section - Dark */}
+      <section id="portfolio" className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 text-lg px-4 py-2">Simple Pricing</Badge>
-            <h2 className="text-4xl lg:text-6xl font-bold">Get Your AI Website in 2 Days</h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
-              Choose your package and watch your business grow with AI-powered automation
+            <h2 className="text-4xl lg:text-6xl font-bold text-white">Our Works</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Showcasing our latest projects and success stories
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="border-2 hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center">
-                <div className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block">
-                  ⚡ 2-Day Delivery
-                </div>
-                <CardTitle className="text-2xl">AI Starter</CardTitle>
-                <div className="text-4xl font-bold text-emerald-600">Kshs 5,500</div>
-                <CardDescription className="text-base">Perfect for small businesses ready to automate</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    AI-Powered Landing Page
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Smart Lead Capture Forms
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Basic AI Chatbot
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    48-Hour Delivery
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />1 Month AI Support
-                  </li>
-                </ul>
-                <Button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700">
-                  Start in 2 Days
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-teal-500/50 transition-all duration-300">
+              <div className="aspect-video bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center">
+                <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border-white/20">
+                  <Play className="w-6 h-6" />
                 </Button>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2">E-Commerce Platform</h3>
+                <p className="text-gray-400">
+                  AI-powered e-commerce solution with real-time inventory and smart recommendations
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-emerald-500 relative hover:shadow-xl transition-all duration-300">
+            <Card className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-teal-500/50 transition-all duration-300">
+              <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border-white/20">
+                  <Play className="w-6 h-6" />
+                </Button>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2">Banking Application</h3>
+                <p className="text-gray-400">
+                  Secure mobile banking app with biometric authentication and real-time transactions
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section - Light Grey */}
+      <section className="py-20 bg-gray-100 text-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl lg:text-6xl font-bold">Simple Pricing</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Transparent pricing for projects of all sizes</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
+              <CardHeader className="text-center">
+                <Badge className="bg-teal-500/20 text-teal-600 mb-4">48-Hour Delivery</Badge>
+                <CardTitle className="text-2xl text-gray-900">Starter</CardTitle>
+                <div className="text-4xl font-bold text-gray-900">$2,500</div>
+                <CardDescription className="text-gray-600">Perfect for small businesses</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    AI-powered landing page
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Smart lead capture
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Basic AI chatbot
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />1 month support
+                  </li>
+                </ul>
+                <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">Get Started</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-teal-500 relative hover:shadow-xl transition-all duration-300 scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-emerald-500 text-white">Most Popular</Badge>
+                <Badge className="bg-teal-500 text-white">Most Popular</Badge>
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Professional</CardTitle>
-                <div className="text-4xl font-bold text-emerald-600">Kshs 12,500</div>
-                <CardDescription>Ideal for growing businesses</CardDescription>
+                <CardTitle className="text-2xl text-gray-900">Professional</CardTitle>
+                <div className="text-4xl font-bold text-gray-900">$8,500</div>
+                <CardDescription className="text-gray-600">Ideal for growing businesses</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Full Web Application
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Full web application
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Database Integration
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Database integration
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    User Authentication
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Advanced AI features
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />6 Weeks Delivery
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />3 Months Support
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />3 months support
                   </li>
                 </ul>
-                <Button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700">
-                  Get Started
-                </Button>
+                <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">Get Started</Button>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-xl transition-all duration-300">
+            <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <div className="text-4xl font-bold text-emerald-600">Custom</div>
-                <CardDescription>For large-scale applications</CardDescription>
+                <CardTitle className="text-2xl text-gray-900">Enterprise</CardTitle>
+                <div className="text-4xl font-bold text-gray-900">Custom</div>
+                <CardDescription className="text-gray-600">For large-scale applications</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Custom Development
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Custom development
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Cloud Infrastructure
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Cloud infrastructure
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Advanced Security
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Dedicated support
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Flexible Timeline
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Ongoing Support
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />
+                    Ongoing maintenance
                   </li>
                 </ul>
-                <Button variant="outline" className="w-full border-emerald-500 text-emerald-600 hover:bg-emerald-50">
+                <Button
+                  variant="outline"
+                  className="w-full border-teal-500 text-teal-600 hover:bg-teal-50 bg-transparent"
+                >
                   Contact Sales
                 </Button>
               </CardContent>
@@ -437,62 +662,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* About Section - Dark */}
+      <section id="about" className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge className="bg-emerald-100 text-emerald-700">About Us</Badge>
-                <h2 className="text-3xl lg:text-5xl font-bold">Innovating Africa&apos;s Digital Future</h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Based in Nairobi, we&apos;re a team of passionate developers and designers committed to building
-                  world-class software solutions that drive business growth.
+              <div className="space-y-6">
+                <h2 className="text-4xl lg:text-6xl font-bold text-white">About Us</h2>
+                <p className="text-xl text-gray-400 leading-relaxed">
+                  Based in Nairobi, we're a team of passionate developers and designers committed to building
+                  world-class software solutions that drive business growth across Africa and beyond.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                  <Users className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-emerald-600">15+</div>
-                  <div className="text-sm text-gray-600">Team Members</div>
+              <div className="grid grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-teal-400">150+</div>
+                  <div className="text-gray-400">Projects Delivered</div>
                 </div>
-                <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                  <Award className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-emerald-600">50+</div>
-                  <div className="text-sm text-gray-600">Awards Won</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-teal-400">98%</div>
+                  <div className="text-gray-400">Client Satisfaction</div>
                 </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="w-10 h-10 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 border-2 border-white"
-                    ></div>
-                  ))}
-                </div>
-                <div>
-                  <div className="flex items-center space-x-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-gray-600">Trusted by 100+ clients</p>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-teal-400">5+</div>
+                  <div className="text-gray-400">Years Experience</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="h-32 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg"></div>
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg"></div>
-                </div>
-                <div className="space-y-4 pt-8">
-                  <div className="h-48 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg"></div>
-                  <div className="h-32 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg"></div>
+              <div className="aspect-square bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-teal-500/10 to-emerald-500/10 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <Users className="w-16 h-16 text-teal-400 mx-auto" />
+                    <div className="text-2xl font-bold text-white">Expert Team</div>
+                    <div className="text-gray-400">15+ Professionals</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -500,44 +706,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      {/* Contact Section - Light Grey */}
+      <section id="contact" className="py-20 bg-gray-100 text-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700">Contact Us</Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold">Let&apos;s Build Something Amazing</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">Let's Work Together</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to start your project? Get in touch with our team today.
+              Ready to transform your business? Get in touch with our team today.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div className="space-y-8">
-              <Card className="p-6">
+              <Card className="bg-white border-gray-200 p-8">
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">First Name</label>
-                      <Input placeholder="John" />
+                      <Input
+                        placeholder="First Name"
+                        className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+                      />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Last Name</label>
-                      <Input placeholder="Doe" />
+                      <Input
+                        placeholder="Last Name"
+                        className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+                      />
                     </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
-                    <Input type="email" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Project Type</label>
-                    <Input placeholder="Web Development, Mobile App, etc." />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
-                    <Textarea placeholder="Tell us about your project..." rows={4} />
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700">
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+                  />
+                  <Input
+                    placeholder="Project Type"
+                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+                  />
+                  <Textarea
+                    placeholder="Tell us about your project..."
+                    rows={4}
+                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+                  />
+                  <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">
                     Send Message
                   </Button>
                 </form>
@@ -547,125 +758,90 @@ export default function HomePage() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-emerald-600" />
+                  <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Email Us</h3>
-                    <p className="text-gray-600">kavetekevin@gmail.com</p>
-                    <p className="text-gray-600">support@nairobisoftwares.com</p>
+                    <h3 className="font-semibold text-lg text-gray-900">Email Us</h3>
+                    <p className="text-gray-600">hello@nairobisoftwares.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-emerald-600" />
+                  <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Call Us</h3>
-                    <p className="text-gray-600">+254 798 566 564</p>
-                    <p className="text-gray-600">+254 101 718 404</p>
+                    <h3 className="font-semibold text-lg text-gray-900">Call Us</h3>
+                    <p className="text-gray-600">+254 700 123 456</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-emerald-600" />
+                  <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Visit Us</h3>
-                    <p className="text-gray-600">Westlands, Nairobi</p>
-                    <p className="text-gray-600">Kenya, East Africa</p>
+                    <h3 className="font-semibold text-lg text-gray-900">Visit Us</h3>
+                    <p className="text-gray-600">Westlands, Nairobi, Kenya</p>
                   </div>
                 </div>
               </div>
-
-              <Card className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50">
-                <h3 className="font-semibold text-lg mb-4">Why Choose Us?</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Expert team with 5+ years experience
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Agile development methodology
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    24/7 support and maintenance
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    Competitive pricing
-                  </li>
-                </ul>
-              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      {/* Footer - Dark */}
+      <footer className="border-t border-gray-800 py-12 bg-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
                   <Code className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">Nairobi Softwares</span>
+                <span className="text-xl font-bold text-white">Nairobi Softwares</span>
               </div>
               <p className="text-gray-400">Building the future of Africa through innovative software solutions.</p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Services</h3>
+              <h3 className="font-semibold mb-4 text-white">Services</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     Web Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     Mobile Apps
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     Cloud Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
-                    Consulting
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
+              <h3 className="font-semibold mb-4 text-white">Company</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     Careers
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -673,26 +849,21 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Connect</h3>
+              <h3 className="font-semibold mb-4 text-white">Connect</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     Twitter
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
+                  <Link href="#" className="hover:text-teal-400 transition-colors">
                     GitHub
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-emerald-400 transition-colors">
-                    Instagram
                   </Link>
                 </li>
               </ul>

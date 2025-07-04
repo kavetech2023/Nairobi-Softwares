@@ -710,7 +710,7 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold">Let&apos;s Work Together</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">Let&#39;s Work Together</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to transform your business? Get in touch with our team today.
             </p>

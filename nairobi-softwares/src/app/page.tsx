@@ -763,7 +763,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">hello@nairobisoftwares.com</p>
+                    <p className="text-gray-600">kavetech@gmail.com</p>
                   </div>
                 </div>
 
@@ -773,7 +773,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+254 700 123 456</p>
+                    <p className="text-gray-600">+254 798 566 564</p>
                   </div>
                 </div>
 

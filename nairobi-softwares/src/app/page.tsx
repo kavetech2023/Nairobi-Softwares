@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -25,9 +27,9 @@ import {
   Utensils,
   Quote,
   X,
+  Hexagon,
 } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { useState, useTransition } from "react"
 import { sendContactEmail } from "@/lib/send-email"
 
@@ -39,15 +41,27 @@ function ContactForm() {
     error?: string
   } | null>(null)
 
-  async function handleSubmit(formData: FormData) {
-    startTransition(async () => {
-      const result = await sendContactEmail(formData)
-      setFormState(result)
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
 
-      // Reset form if successful
-      if (result.success) {
-        const form = document.getElementById("contact-form") as HTMLFormElement
-        form?.reset()
+    const formData = new FormData(event.currentTarget)
+
+    startTransition(async () => {
+      try {
+        const result = await sendContactEmail(formData)
+        setFormState(result)
+
+        // Reset form if successful
+        if (result.success) {
+          const form = event.currentTarget
+          form.reset()
+        }
+      } catch (error) {
+        console.error("Form submission error:", error)
+        setFormState({
+          success: false,
+          error: "An unexpected error occurred. Please try again.",
+        })
       }
     })
   }
@@ -55,7 +69,7 @@ function ContactForm() {
   return (
     <div className="space-y-8">
       <Card className="bg-white border-gray-200 p-8">
-        <form id="contact-form" action={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <Input
@@ -241,26 +255,22 @@ export default function HomePage() {
         {/* Animated Stars Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
           {/* Scientific Grid Pattern */}
-          <div
-            className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.05)_0%,transparent_60%)]"
-            style={{ WebkitMaskImage: "url(/grid-mask.png)", maskImage: "url(/grid-mask.png)" }}
-          />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.05)_0%,transparent_60%)]" />
 
-          {/* Hexagon Pattern */}
+          {/* Hexagon Pattern using Lucide Icons */}
           {[...Array(15)].map((_, i) => (
             <div
               key={i}
-              className="absolute opacity-20"
+              className="absolute opacity-20 text-cyan-400"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                width: `${50 + Math.random() * 100}px`,
-                height: `${50 + Math.random() * 100}px`,
-                backgroundImage: "url(/hexagon.svg)",
-                backgroundSize: "cover",
+                fontSize: `${20 + Math.random() * 40}px`,
                 animation: `hexagonRotate ${10 + Math.random() * 20}s linear infinite`,
               }}
-            />
+            >
+              <Hexagon />
+            </div>
           ))}
 
           {/* Circuit Board Lines */}
@@ -502,7 +512,6 @@ export default function HomePage() {
               {
                 name: "Sarah Johnson",
                 role: "CEO, TechStart Kenya",
-                image: "/placeholder.svg?height=80&width=80",
                 quote:
                   "Nairobi Softwares delivered our AI-powered e-commerce platform in just 2 days. Our sales increased by 250% in the first month!",
                 rating: 5,
@@ -510,7 +519,6 @@ export default function HomePage() {
               {
                 name: "Michael Ochieng",
                 role: "Founder, EduLearn Africa",
-                image: "/placeholder.svg?height=80&width=80",
                 quote:
                   "The learning management system they built has revolutionized how we deliver education. The AI features are incredible!",
                 rating: 5,
@@ -518,7 +526,6 @@ export default function HomePage() {
               {
                 name: "Amina Hassan",
                 role: "Director, HealthCare Plus",
-                image: "/placeholder.svg?height=80&width=80",
                 quote:
                   "Our patient management system is now seamless. The 48-hour delivery promise was kept, and the quality exceeded expectations.",
                 rating: 5,
@@ -535,13 +542,9 @@ export default function HomePage() {
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        width={64}
-                        height={64}
-                        className="relative w-16 h-16 rounded-full border-2 border-teal-500/50"
-                      />
+                      <div className="relative w-16 h-16 rounded-full border-2 border-teal-500/50 bg-gradient-to-r from-teal-500 to-emerald-500 flex items-center justify-center">
+                        <Users className="w-8 h-8 text-white" />
+                      </div>
                     </div>
                     <div>
                       <h4 className="font-semibold text-white">{testimonial.name}</h4>

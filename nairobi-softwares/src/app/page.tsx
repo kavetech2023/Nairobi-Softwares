@@ -24,12 +24,96 @@ import {
   Car,
   Utensils,
   Quote,
+  X,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { useState } from "react"
 
 export default function HomePage() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
+
+  const videos = [
+    {
+      id: "e-commerce",
+      title: "E-Commerce Platform",
+      description: "AI-powered e-commerce solution with real-time inventory and smart recommendations",
+      youtubeId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      gradient: "from-teal-500/20 to-emerald-500/20",
+    },
+    {
+      id: "banking",
+      title: "Banking Application",
+      description: "Secure mobile banking app with biometric authentication and real-time transactions",
+      youtubeId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      gradient: "from-purple-500/20 to-pink-500/20",
+    },
+  ]
+
+  const openVideo = (videoId: string) => {
+    setSelectedVideo(videoId)
+  }
+
+  const closeVideo = () => {
+    setSelectedVideo(null)
+  }
+
+  const selectedVideoData = videos.find((video) => video.youtubeId === selectedVideo)
+
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={closeVideo} />
+
+          {/* Modal Content */}
+          <div className="relative z-10 w-full max-w-6xl mx-4">
+            <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-700">
+                <div>
+                  <h3 className="text-2xl font-bold text-white">{selectedVideoData?.title}</h3>
+                  <p className="text-gray-400 mt-1">{selectedVideoData?.description}</p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={closeVideo}
+                  className="text-gray-400 hover:text-white hover:bg-gray-800 rounded-full w-10 h-10 p-0"
+                >
+                  <X className="w-5 h-5" />
+                </Button>
+              </div>
+
+              {/* Video Container */}
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0&modestbranding=1`}
+                  title={selectedVideoData?.title}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              {/* Modal Footer */}
+              <div className="p-6 bg-gray-800/50">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <Badge className="bg-teal-500/20 text-teal-300 border border-teal-500/30">Case Study</Badge>
+                    <span className="text-sm text-gray-400">Watch how we delivered this project in 48 hours</span>
+                  </div>
+                  <Button className="bg-teal-500 hover:bg-teal-600 text-black font-semibold">Start Your Project</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/90 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -127,7 +211,7 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  We Don&#39;t Just Build Websites, We{" "}
+                  We Don&apos;t Just Build Websites, We{" "}
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                     Build Success
                   </span>
@@ -212,7 +296,7 @@ export default function HomePage() {
                     </div>
                     <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
                       <p className="text-base font-medium">
-                        &quot;Hi! I&apos;m your AI assistant. Ready to boost your sales by 300%?&quot;
+                        &ldquo;Hi! I&rsquo;m your AI assistant. Ready to boost your sales by 300%?&rdquo;
                       </p>
                     </div>
                     <div className="flex items-center justify-between">
@@ -318,7 +402,9 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold text-white">What Our Clients Say</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">Real stories from businesses we&#39;ve transformed</p>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Real stories from businesses we&rsquo;ve transformed
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -359,9 +445,11 @@ export default function HomePage() {
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                      <img
+                      <Image
                         src={testimonial.image || "/placeholder.svg"}
                         alt={testimonial.name}
+                        width={64}
+                        height={64}
                         className="relative w-16 h-16 rounded-full border-2 border-teal-500/50"
                       />
                     </div>
@@ -525,33 +613,45 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-teal-500/50 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center">
-                <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border-white/20">
-                  <Play className="w-6 h-6" />
-                </Button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">E-Commerce Platform</h3>
-                <p className="text-gray-400">
-                  AI-powered e-commerce solution with real-time inventory and smart recommendations
-                </p>
-              </CardContent>
-            </Card>
+            {videos.map((video) => (
+              <Card
+                key={video.id}
+                className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-teal-500/50 transition-all duration-300 cursor-pointer"
+                onClick={() => openVideo(video.youtubeId)}
+              >
+                <div
+                  className={`aspect-video bg-gradient-to-br ${video.gradient} flex items-center justify-center relative overflow-hidden`}
+                >
+                  {/* Video Thumbnail Overlay */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
 
-            <Card className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-teal-500/50 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border-white/20">
-                  <Play className="w-6 h-6" />
-                </Button>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">Banking Application</h3>
-                <p className="text-gray-400">
-                  Secure mobile banking app with biometric authentication and real-time transactions
-                </p>
-              </CardContent>
-            </Card>
+                  {/* Play Button */}
+                  <div className="relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm">
+                      <Play className="w-8 h-8 text-gray-900 ml-1" />
+                    </div>
+                  </div>
+
+                  {/* Hover Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Video Duration Badge */}
+                  <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm px-2 py-1 rounded backdrop-blur-sm">
+                    2:34
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                    {video.title}
+                  </h3>
+                  <p className="text-gray-400">{video.description}</p>
+                  <div className="flex items-center justify-between mt-4">
+                    <Badge className="bg-teal-500/20 text-teal-300 border border-teal-500/30">Case Study</Badge>
+                    <span className="text-sm text-gray-500">Click to watch</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -670,7 +770,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 <h2 className="text-4xl lg:text-6xl font-bold text-white">About Us</h2>
                 <p className="text-xl text-gray-400 leading-relaxed">
-                  Based in Nairobi, we&apos;re a team of passionate developers and designers committed to building
+                  Based in Nairobi, we&rsquo;re a team of passionate developers and designers committed to building
                   world-class software solutions that drive business growth across Africa and beyond.
                 </p>
               </div>
@@ -710,7 +810,7 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold">Let&#39;s Work Together</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">Let&rsquo;s Work Together</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to transform your business? Get in touch with our team today.
             </p>
@@ -763,7 +863,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">kavetech@gmail.com</p>
+                    <p className="text-gray-600">hello@nairobisoftwares.com</p>
                   </div>
                 </div>
 
@@ -773,7 +873,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+254 798 566 564</p>
+                    <p className="text-gray-600">+254 700 123 456</p>
                   </div>
                 </div>
 

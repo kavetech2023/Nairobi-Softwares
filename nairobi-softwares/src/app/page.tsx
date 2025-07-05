@@ -28,7 +28,97 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useTransition } from "react"
+import { sendContactEmail } from "@/lib/send-email"
+
+function ContactForm() {
+  const [isPending, startTransition] = useTransition()
+  const [formState, setFormState] = useState<{
+    success?: boolean
+    message?: string
+    error?: string
+  } | null>(null)
+
+  async function handleSubmit(formData: FormData) {
+    startTransition(async () => {
+      const result = await sendContactEmail(formData)
+      setFormState(result)
+
+      // Reset form if successful
+      if (result.success) {
+        const form = document.getElementById("contact-form") as HTMLFormElement
+        form?.reset()
+      }
+    })
+  }
+
+  return (
+    <div className="space-y-8">
+      <Card className="bg-white border-gray-200 p-8">
+        <form id="contact-form" action={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <Input
+                name="firstName"
+                placeholder="First Name *"
+                required
+                className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+              />
+            </div>
+            <div>
+              <Input
+                name="lastName"
+                placeholder="Last Name *"
+                required
+                className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+              />
+            </div>
+          </div>
+          <Input
+            name="email"
+            type="email"
+            placeholder="Email Address *"
+            required
+            className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+          />
+          <Input
+            name="projectType"
+            placeholder="Project Type (e.g., Website, Mobile App, E-commerce)"
+            className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+          />
+          <Textarea
+            name="message"
+            placeholder="Tell us about your project... *"
+            rows={4}
+            required
+            className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
+          />
+
+          {/* Success/Error Messages */}
+          {formState?.success && (
+            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+              <p className="text-green-800 font-medium">✅ {formState.message}</p>
+            </div>
+          )}
+
+          {formState?.error && (
+            <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-red-800 font-medium">❌ {formState.error}</p>
+            </div>
+          )}
+
+          <Button
+            type="submit"
+            disabled={isPending}
+            className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold disabled:opacity-50"
+          >
+            {isPending ? "Sending Message..." : "Send Message"}
+          </Button>
+        </form>
+      </Card>
+    </div>
+  )
+}
 
 export default function HomePage() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
@@ -817,43 +907,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            <div className="space-y-8">
-              <Card className="bg-white border-gray-200 p-8">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Input
-                        placeholder="First Name"
-                        className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        placeholder="Last Name"
-                        className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
-                      />
-                    </div>
-                  </div>
-                  <Input
-                    type="email"
-                    placeholder="Email Address"
-                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
-                  />
-                  <Input
-                    placeholder="Project Type"
-                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
-                  />
-                  <Textarea
-                    placeholder="Tell us about your project..."
-                    rows={4}
-                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
-                  />
-                  <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">
-                    Send Message
-                  </Button>
-                </form>
-              </Card>
-            </div>
+            <ContactForm />
 
             <div className="space-y-8">
               <div className="space-y-6">

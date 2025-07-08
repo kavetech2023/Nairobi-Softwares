@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import {
   ArrowRight,
   CheckCircle,
-  Code,
+  Power,
   Smartphone,
   Zap,
   Users,
@@ -223,7 +223,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <Code className="w-5 h-5 text-white" />
+              <Building2 className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-white">Nairobi Softwares</span>
           </div>
@@ -667,7 +667,7 @@ export default function HomePage() {
             <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                  <Code className="w-6 h-6 text-white" />
+                  <Power className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-xl text-gray-900">Cloud Solutions</CardTitle>
                 <CardDescription className="text-gray-600">
@@ -956,7 +956,7 @@ export default function HomePage() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-                  <Code className="w-5 h-5 text-white" />
+                  <Power className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold text-white">Nairobi Softwares</span>
               </div>

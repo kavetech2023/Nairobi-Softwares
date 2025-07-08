@@ -225,7 +225,7 @@ export default function HomePage() {
             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
               <Building2 className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">Nairobi Softwares</span>
+            <span className="text-xl font-bold text-white">Nairobi Softwares Company</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">

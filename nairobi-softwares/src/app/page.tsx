@@ -239,7 +239,7 @@ export default function HomePage() {
               About Us
             </Link>
             <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
-              Contact
+              Contact Us
             </Link>
             <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
               <span>Resources</span>
@@ -311,7 +311,7 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  We Don&apos;t Just Build Websites, We{" "}
+                  We Don&apos;t Just Build Software, We{" "}
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                     Build Success
                   </span>

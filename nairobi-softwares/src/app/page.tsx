@@ -760,7 +760,6 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader className="text-center">
-                <Badge className="bg-teal-500/20 text-teal-600 mb-4">48-Hour Delivery</Badge>
                 <CardTitle className="text-2xl text-gray-900">Starter</CardTitle>
                 <div className="text-4xl font-bold text-gray-900">Kshs 10,000</div>
                 <CardDescription className="text-gray-600">Perfect for small businesses</CardDescription>

@@ -762,7 +762,7 @@ export default function HomePage() {
               <CardHeader className="text-center">
                 <Badge className="bg-teal-500/20 text-teal-600 mb-4">48-Hour Delivery</Badge>
                 <CardTitle className="text-2xl text-gray-900">Starter</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">$2,500</div>
+                <div className="text-4xl font-bold text-gray-900">Kshs 10,000</div>
                 <CardDescription className="text-gray-600">Perfect for small businesses</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -793,7 +793,7 @@ export default function HomePage() {
               </div>
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl text-gray-900">Professional</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">$8,500</div>
+                <div className="text-4xl font-bold text-gray-900">Kshs 20,000</div>
                 <CardDescription className="text-gray-600">Ideal for growing businesses</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">

@@ -335,37 +335,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <style jsx>{`
-          @keyframes hexagonRotate {
-            0% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(360deg);
-            }
-          }
-
-          @keyframes circuitSlide {
-            0% {
-              transform: translateX(-100%);
-            }
-            100% {
-              transform: translateX(100%);
-            }
-          }
-
-          @keyframes dataPulse {
-            0%,
-            100% {
-              opacity: 0.5;
-              transform: scale(1);
-            }
-            50% {
-              opacity: 1;
-              transform: scale(1.2);
-            }
-          }
-        `}</style>
+        
       </section>
 
       {/* Industries Section - Light Grey */}

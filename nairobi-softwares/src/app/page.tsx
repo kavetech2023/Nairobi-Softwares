@@ -510,6 +510,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                id: 1,
                 name: "Sarah Johnson",
                 role: "CEO, TechStart Kenya",
                 quote:
@@ -517,6 +518,7 @@ export default function HomePage() {
                 rating: 5,
               },
               {
+                id: 2,
                 name: "Michael Ochieng",
                 role: "Founder, EduLearn Africa",
                 quote:
@@ -524,6 +526,7 @@ export default function HomePage() {
                 rating: 5,
               },
               {
+                id: 3,
                 name: "Amina Hassan",
                 role: "Director, HealthCare Plus",
                 quote:
@@ -543,7 +546,11 @@ export default function HomePage() {
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
                       <div className="relative w-16 h-16 rounded-full border-2 border-teal-500/50 bg-gradient-to-r from-teal-500 to-emerald-500 flex items-center justify-center">
-                        <Users className="w-8 h-8 text-white" />
+                        <img
+  src={`https://randomuser.me/api/portraits/women/${testimonial.id}.jpg`}
+  alt="User Avatar"
+  className="w-full h-full rounded-full object-cover"
+/>
                       </div>
                     </div>
                     <div>

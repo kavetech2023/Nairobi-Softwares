@@ -137,86 +137,41 @@ function ContactForm() {
 export default function HomePage() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
 
-  const videos = [
-    {
-      id: "e-commerce",
-      title: "E-Commerce Platform",
-      description: "AI-powered e-commerce solution with real-time inventory and smart recommendations",
-      youtubeId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      gradient: "from-teal-500/20 to-emerald-500/20",
-    },
-    {
-      id: "banking",
-      title: "Banking Application",
-      description: "Secure mobile banking app with biometric authentication and real-time transactions",
-      youtubeId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      gradient: "from-purple-500/20 to-pink-500/20",
-    },
-  ]
+  const projects = [
+  {
+    id: 1,
+    title: "LuxeHomes Real Estate",
+    description: "A modern, responsive real estate website with 3D tours.",
+    image: "/images/luxehomes.jpg",
+    url: "https://luxehomes.com",
+    type: "Website",
+  },
+  {
+    id: 2,
+    title: "SwiftPay",
+    description: "A secure and fast mobile payment solution.",
+    image: "/images/swiftpay.jpg",
+    url: "https://swiftpay.app",
+    type: "Mobile App",
+  },
+  {
+    id: 3,
+    title: "FitTrack Pro",
+    description: "AI-powered fitness tracking web application.",
+    image: "/images/fittrack.jpg",
+    url: "https://fittrackpro.com",
+    type: "Web App",
+  },
+];
 
-  const openVideo = (videoId: string) => {
-    setSelectedVideo(videoId)
-  }
 
-  const closeVideo = () => {
-    setSelectedVideo(null)
-  }
+  
 
-  const selectedVideoData = videos.find((video) => video.youtubeId === selectedVideo)
+  
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Video Modal */}
-      {selectedVideo && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center">
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={closeVideo} />
 
-          {/* Modal Content */}
-          <div className="relative z-10 w-full max-w-6xl mx-4">
-            <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-              {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                <div>
-                  <h3 className="text-2xl font-bold text-white">{selectedVideoData?.title}</h3>
-                  <p className="text-gray-400 mt-1">{selectedVideoData?.description}</p>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={closeVideo}
-                  className="text-gray-400 hover:text-white hover:bg-gray-800 rounded-full w-10 h-10 p-0"
-                >
-                  <X className="w-5 h-5" />
-                </Button>
-              </div>
-
-              {/* Video Container */}
-              <div className="relative aspect-video bg-black">
-                <iframe
-                  src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0&modestbranding=1`}
-                  title={selectedVideoData?.title}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              {/* Modal Footer */}
-              <div className="p-6 bg-gray-800/50">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <Badge className="bg-teal-500/20 text-teal-300 border border-teal-500/30">Case Study</Badge>
-                    <span className="text-sm text-gray-400">Watch how we delivered this project in 48 hours</span>
-                  </div>
-                  <Button className="bg-teal-500 hover:bg-teal-600 text-black font-semibold">Start Your Project</Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/90 border-b border-gray-800">
@@ -366,8 +321,10 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl shadow-2xl backdrop-blur-sm border border-cyan-500/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-400/5 rounded-3xl"></div>
+              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl  shadow-2xl backdrop-blur-sm border border-cyan-500/20">
+                
+
+              
 
                 <div className="relative bg-gray-900/90 rounded-2xl p-8 space-y-6 shadow-inner border border-cyan-500/10">
                   <div className="flex items-center space-x-3">
@@ -702,58 +659,52 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Section - Dark */}
-      <section id="portfolio" className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold text-white">Our Works</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Showcasing our latest projects and success stories
-            </p>
+<section id="portfolio" className="py-20 bg-black">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="text-center space-y-4 mb-16">
+      <h2 className="text-4xl lg:text-6xl font-bold text-white">Our Creations</h2>
+      <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        A showcase of our best work — from sleek websites to powerful apps.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <a
+          key={project.id}
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 shadow-lg hover:shadow-teal-500/20"
+        >
+          {/* Image */}
+          <div className="relative aspect-video overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+            {/* Badge */}
+            <div className="absolute top-4 left-4 bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs px-3 py-1 rounded-full backdrop-blur-sm">
+              {project.type}
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {videos.map((video) => (
-              <Card
-                key={video.id}
-                className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-teal-500/50 transition-all duration-300 cursor-pointer"
-                onClick={() => openVideo(video.youtubeId)}
-              >
-                <div
-                  className={`aspect-video bg-gradient-to-br ${video.gradient} flex items-center justify-center relative overflow-hidden`}
-                >
-                  {/* Video Thumbnail Overlay */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
-
-                  {/* Play Button */}
-                  <div className="relative z-10 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm">
-                      <Play className="w-8 h-8 text-gray-900 ml-1" />
-                    </div>
-                  </div>
-
-                  {/* Hover Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  {/* Video Duration Badge */}
-                  <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm px-2 py-1 rounded backdrop-blur-sm">
-                    2:34
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-teal-400 transition-colors">
-                    {video.title}
-                  </h3>
-                  <p className="text-gray-400">{video.description}</p>
-                  <div className="flex items-center justify-between mt-4">
-                    <Badge className="bg-teal-500/20 text-teal-300 border border-teal-500/30">Case Study</Badge>
-                    <span className="text-sm text-gray-500">Click to watch</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Content */}
+          <div className="p-6">
+            <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-teal-400 transition-colors">
+              {project.title}
+            </h3>
+            <p className="text-gray-400 text-sm">{project.description}</p>
           </div>
-        </div>
-      </section>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Pricing Section - Light Grey */}
       <section className="py-20 bg-gray-100 text-black">

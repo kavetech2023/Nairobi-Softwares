@@ -1,12 +1,18 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   ArrowRight,
   CheckCircle,
@@ -26,42 +32,42 @@ import {
   Utensils,
   Quote,
   Hexagon,
-} from "lucide-react"
-import Link from "next/link"
-import { useState, useTransition } from "react"
-import { sendContactEmail } from "@/lib/send-email"
+} from "lucide-react";
+import Link from "next/link";
+import { useState, useTransition } from "react";
+import { sendContactEmail } from "@/lib/send-email";
 
 function ContactForm() {
-  const [isPending, startTransition] = useTransition()
+  const [isPending, startTransition] = useTransition();
   const [formState, setFormState] = useState<{
-    success?: boolean
-    message?: string
-    error?: string
-  } | null>(null)
+    success?: boolean;
+    message?: string;
+    error?: string;
+  } | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const formData = new FormData(event.currentTarget)
+    const formData = new FormData(event.currentTarget);
 
     startTransition(async () => {
       try {
-        const result = await sendContactEmail(formData)
-        setFormState(result)
+        const result = await sendContactEmail(formData);
+        setFormState(result);
 
         // Reset form if successful
         if (result.success) {
-          const form = event.currentTarget
-          form.reset()
+          const form = event.currentTarget;
+          form.reset();
         }
       } catch (error) {
-        console.error("Form submission error:", error)
+        console.error("Form submission error:", error);
         setFormState({
           success: false,
           error: "An unexpected error occurred. Please try again.",
-        })
+        });
       }
-    })
+    });
   }
 
   return (
@@ -109,7 +115,9 @@ function ContactForm() {
           {/* Success/Error Messages */}
           {formState?.success && (
             <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-green-800 font-medium">✅ {formState.message}</p>
+              <p className="text-green-800 font-medium">
+                ✅ {formState.message}
+              </p>
             </div>
           )}
 
@@ -129,47 +137,39 @@ function ContactForm() {
         </form>
       </Card>
     </div>
-  )
+  );
 }
 
 export default function HomePage() {
-
   const projects = [
-  {
-    id: 1,
-    title: "LuxeHomes Real Estate",
-    description: "A modern, responsive real estate website with 3D tours.",
-    image: "/images/luxehomes.jpg",
-    url: "https://luxehomes.com",
-    type: "Website",
-  },
-  {
-    id: 2,
-    title: "SwiftPay",
-    description: "A secure and fast mobile payment solution.",
-    image: "/images/swiftpay.jpg",
-    url: "https://swiftpay.app",
-    type: "Mobile App",
-  },
-  {
-    id: 3,
-    title: "FitTrack Pro",
-    description: "AI-powered fitness tracking web application.",
-    image: "/images/fittrack.jpg",
-    url: "https://fittrackpro.com",
-    type: "Web App",
-  },
-];
-
-
-  
-
-  
+    {
+      id: 1,
+      title: "LuxeHomes Real Estate",
+      description: "A modern, responsive real estate website with 3D tours.",
+      image: "/images/luxehomes.jpg",
+      url: "https://luxehomes.com",
+      type: "Website",
+    },
+    {
+      id: 2,
+      title: "SwiftPay",
+      description: "A secure and fast mobile payment solution.",
+      image: "/images/swiftpay.jpg",
+      url: "https://swiftpay.app",
+      type: "Mobile App",
+    },
+    {
+      id: 3,
+      title: "FitTrack Pro",
+      description: "AI-powered fitness tracking web application.",
+      image: "/images/fittrack.jpg",
+      url: "https://fittrackpro.com",
+      type: "Web App",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
-
-
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/90 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -177,28 +177,37 @@ export default function HomePage() {
             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
               <Building2 className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">Nairobi Softwares Company</span>
+            <span className="text-xl font-bold text-white">
+              Nairobi Softwares Company
+            </span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
               <span>Services</span>
               <ChevronDown className="w-4 h-4" />
             </div>
-            <Link href="#portfolio" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#portfolio"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
               Our Works
             </Link>
-            <Link href="#about" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#about"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
               About Us
             </Link>
-            <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="#contact"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
               Contact Us
             </Link>
-            <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
-              <span>Resources</span>
-              <ChevronDown className="w-4 h-4" />
-            </div>
           </nav>
-          <Button className="bg-teal-500 hover:bg-teal-600 text-black font-semibold px-6">Work With Us</Button>
+          <Button className="bg-teal-500 hover:bg-teal-600 text-black font-semibold px-6">
+            Work With Us
+          </Button>
         </div>
       </header>
 
@@ -270,8 +279,9 @@ export default function HomePage() {
                 </h1>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
-                  At Nairobi Softwares, we craft AI-powered websites that convert visitors into customers, delivered in
-                  just 48 hours with precision and excellence.
+                  At Nairobi Softwares, we craft AI-powered websites that
+                  convert visitors into customers, delivered in just 48 hours
+                  with precision and excellence.
                 </p>
               </div>
 
@@ -300,46 +310,46 @@ export default function HomePage() {
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     48h
                   </div>
-                  <div className="text-sm text-gray-400 font-medium">Delivery Time</div>
+                  <div className="text-sm text-gray-400 font-medium">
+                    Delivery Time
+                  </div>
                 </div>
                 <div className="text-center group">
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     300%
                   </div>
-                  <div className="text-sm text-gray-400 font-medium">Sales Boost</div>
+                  <div className="text-sm text-gray-400 font-medium">
+                    Sales Boost
+                  </div>
                 </div>
                 <div className="text-center group">
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     24/7
                   </div>
-                  <div className="text-sm text-gray-400 font-medium">AI Working</div>
+                  <div className="text-sm text-gray-400 font-medium">
+                    AI Working
+                  </div>
                 </div>
               </div>
             </div>
 
-          <div className="relative flex flex-col items-center space-y-6 py-2">
-  
-  {/* Prominent Image */}
-  <img
-    src="/images/nairobi.png"
-    alt="AI Company"
-    className="w-full max-w-4xl rounded-3xl shadow-lg object-cover"
-  />
-</div>
-
-
-
+            <div className="relative flex flex-col items-center space-y-6 py-2">
+              {/* Prominent Image */}
+              <img
+                src="/images/nairobi.png"
+                alt="AI Company"
+                className="w-full max-w-4xl rounded-3xl shadow-lg object-cover"
+              />
+            </div>
           </div>
         </div>
-
-        
       </section>
 
       {/* Industries Section - Light Grey */}
       <section className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold">Industries We Serve</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">What we build</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Delivering cutting-edge solutions across diverse sectors
             </p>
@@ -347,12 +357,36 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: ShoppingCart, title: "E-Commerce", desc: "Online stores with AI-powered recommendations" },
-              { icon: Stethoscope, title: "Healthcare", desc: "Patient management and telemedicine platforms" },
-              { icon: GraduationCap, title: "Education", desc: "Learning management systems and e-learning" },
-              { icon: Building2, title: "Real Estate", desc: "Property management and virtual tours" },
-              { icon: Car, title: "Automotive", desc: "Dealership websites and inventory management" },
-              { icon: Utensils, title: "Restaurants", desc: "Online ordering and reservation systems" },
+              {
+                icon: ShoppingCart,
+                title: "E-Commerce",
+                desc: "Online stores with AI-powered recommendations",
+              },
+              {
+                icon: Stethoscope,
+                title: "Healthcare",
+                desc: "Patient management and telemedicine platforms",
+              },
+              {
+                icon: GraduationCap,
+                title: "Education",
+                desc: "Learning management systems and e-learning",
+              },
+              {
+                icon: Building2,
+                title: "Real Estate",
+                desc: "Property management and virtual tours",
+              },
+              {
+                icon: Car,
+                title: "Automotive",
+                desc: "Dealership websites and inventory management",
+              },
+              {
+                icon: Utensils,
+                title: "Restaurants",
+                desc: "Online ordering and reservation systems",
+              },
             ].map((industry, index) => (
               <Card
                 key={index}
@@ -362,8 +396,12 @@ export default function HomePage() {
                   <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <industry.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl text-gray-900">{industry.title}</CardTitle>
-                  <CardDescription className="text-gray-600">{industry.desc}</CardDescription>
+                  <CardTitle className="text-xl text-gray-900">
+                    {industry.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {industry.desc}
+                  </CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -391,7 +429,9 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold text-white">What Our Clients Say</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold text-white">
+              What Our Clients Say
+            </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Real stories from businesses we&rsquo;ve transformed
             </p>
@@ -437,21 +477,27 @@ export default function HomePage() {
                       <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
                       <div className="relative w-16 h-16 rounded-full border-2 border-teal-500/50 bg-gradient-to-r from-teal-500 to-emerald-500 flex items-center justify-center">
                         <img
-  src={`https://randomuser.me/api/portraits/women/${testimonial.id}.jpg`}
-  alt="User Avatar"
-  className="w-full h-full rounded-full object-cover"
-/>
+                          src={`https://randomuser.me/api/portraits/women/${testimonial.id}.jpg`}
+                          alt="User Avatar"
+                          className="w-full h-full rounded-full object-cover"
+                        />
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                      <h4 className="font-semibold text-white">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-400 text-sm">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
 
                   <div className="relative mb-6">
                     <Quote className="absolute -top-2 -left-2 w-8 h-8 text-teal-500/30" />
-                    <p className="text-gray-300 leading-relaxed pl-6">{testimonial.quote}</p>
+                    <p className="text-gray-300 leading-relaxed pl-6">
+                      {testimonial.quote}
+                    </p>
                   </div>
 
                   <div className="flex space-x-1">
@@ -500,7 +546,8 @@ export default function HomePage() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions designed to accelerate your digital transformation
+              Comprehensive solutions designed to accelerate your digital
+              transformation
             </p>
           </div>
 
@@ -510,9 +557,12 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl text-gray-900">AI-Enhanced Websites</CardTitle>
+                <CardTitle className="text-xl text-gray-900">
+                  AI-Enhanced Websites
+                </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Smart websites with embedded AI that automatically capture leads and boost conversions
+                  Smart websites with embedded AI that automatically capture
+                  leads and boost conversions
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -538,9 +588,12 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
                   <Smartphone className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl text-gray-900">Mobile Development</CardTitle>
+                <CardTitle className="text-xl text-gray-900">
+                  Mobile Development
+                </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Native and cross-platform mobile applications for iOS and Android
+                  Native and cross-platform mobile applications for iOS and
+                  Android
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -566,7 +619,9 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
                   <Power className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-xl text-gray-900">Cloud Solutions</CardTitle>
+                <CardTitle className="text-xl text-gray-900">
+                  Cloud Solutions
+                </CardTitle>
                 <CardDescription className="text-gray-600">
                   Scalable cloud infrastructure and deployment solutions
                 </CardDescription>
@@ -593,67 +648,77 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Section - Dark */}
-<section id="portfolio" className="py-20 bg-black">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8">
-    <div className="text-center space-y-4 mb-16">
-      <h2 className="text-4xl lg:text-6xl font-bold text-white">Our Creations</h2>
-      <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-        A showcase of our best work — from sleek websites to powerful apps.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-3 gap-8">
-      {projects.map((project) => (
-        <a
-          key={project.id}
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 shadow-lg hover:shadow-teal-500/20"
-        >
-          {/* Image */}
-          <div className="relative aspect-video overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
-            {/* Badge */}
-            <div className="absolute top-4 left-4 bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs px-3 py-1 rounded-full backdrop-blur-sm">
-              {project.type}
-            </div>
+      <section id="portfolio" className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl lg:text-6xl font-bold text-white">
+              Our Creations
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              A showcase of our best work — from sleek websites to powerful
+              apps.
+            </p>
           </div>
 
-          {/* Content */}
-          <div className="p-6">
-            <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-teal-400 transition-colors">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 text-sm">{project.description}</p>
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="grid md:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 shadow-lg hover:shadow-teal-500/20"
+              >
+                {/* Image */}
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs px-3 py-1 rounded-full backdrop-blur-sm">
+                    {project.type}
+                  </div>
+                </div>
 
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{project.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Pricing Section - Light Grey */}
       <section className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold">Simple Pricing</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Transparent pricing for projects of all sizes</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Transparent pricing for projects of all sizes
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-gray-900">Starter</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">Kshs 10,000</div>
-                <CardDescription className="text-gray-600">Perfect for small businesses</CardDescription>
+                <CardTitle className="text-2xl text-gray-900">
+                  Starter
+                </CardTitle>
+                <div className="text-4xl font-bold text-gray-900">
+                  Kshs 10,000
+                </div>
+                <CardDescription className="text-gray-600">
+                  Perfect for small businesses
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
@@ -670,10 +735,13 @@ export default function HomePage() {
                     Basic AI chatbot
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />1 month support
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />1
+                    month support
                   </li>
                 </ul>
-                <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">Get Started</Button>
+                <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">
+                  Get Started
+                </Button>
               </CardContent>
             </Card>
 
@@ -682,9 +750,15 @@ export default function HomePage() {
                 <Badge className="bg-teal-500 text-white">Most Popular</Badge>
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-gray-900">Professional</CardTitle>
-                <div className="text-4xl font-bold text-gray-900">Kshs 20,000</div>
-                <CardDescription className="text-gray-600">Ideal for growing businesses</CardDescription>
+                <CardTitle className="text-2xl text-gray-900">
+                  Professional
+                </CardTitle>
+                <div className="text-4xl font-bold text-gray-900">
+                  Kshs 20,000
+                </div>
+                <CardDescription className="text-gray-600">
+                  Ideal for growing businesses
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
@@ -701,18 +775,25 @@ export default function HomePage() {
                     Advanced AI features
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />3 months support
+                    <CheckCircle className="w-5 h-5 text-teal-500 mr-3" />3
+                    months support
                   </li>
                 </ul>
-                <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">Get Started</Button>
+                <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold">
+                  Get Started
+                </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-gray-900">Enterprise</CardTitle>
+                <CardTitle className="text-2xl text-gray-900">
+                  Enterprise
+                </CardTitle>
                 <div className="text-4xl font-bold text-gray-900">Custom</div>
-                <CardDescription className="text-gray-600">For large-scale applications</CardDescription>
+                <CardDescription className="text-gray-600">
+                  For large-scale applications
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
@@ -751,10 +832,13 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h2 className="text-4xl lg:text-6xl font-bold text-white">About Us</h2>
+                <h2 className="text-4xl lg:text-6xl font-bold text-white">
+                  About Us
+                </h2>
                 <p className="text-xl text-gray-400 leading-relaxed">
-                  Based in Nairobi, we&rsquo;re a team of passionate developers and designers committed to building
-                  world-class software solutions that drive business growth across Africa and beyond.
+                  Based in Nairobi, we&rsquo;re a team of passionate developers
+                  and designers committed to building world-class software
+                  solutions that drive business growth across Africa and beyond.
                 </p>
               </div>
 
@@ -775,25 +859,29 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-  <div className="aspect-square rounded-2xl overflow-hidden relative">
-    {/* Background image */}
-    <div
-      className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: "url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg')" }}
-    />
+              <div className="aspect-square rounded-2xl overflow-hidden relative">
+                {/* Background image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg')",
+                  }}
+                />
 
-    {/* Vignette overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-black/30" />
+                {/* Vignette overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-black/30" />
 
-    {/* Content */}
-    <div className="relative z-10 flex items-center justify-center w-full h-full text-center space-y-4 flex-col">
-      <Users className="w-16 h-16 text-teal-400 mx-auto" />
-      <div className="text-2xl font-bold text-white">Expert Team</div>
-      <div className="text-gray-300">15+ Professionals</div>
-    </div>
-  </div>
-</div>
-
+                {/* Content */}
+                <div className="relative z-10 flex items-center justify-center w-full h-full text-center space-y-4 flex-col">
+                  <Users className="w-16 h-16 text-teal-400 mx-auto" />
+                  <div className="text-2xl font-bold text-white">
+                    Expert Team
+                  </div>
+                  <div className="text-gray-300">15+ Professionals</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -802,9 +890,12 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold">Let&rsquo;s Work Together</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold">
+              Let&rsquo;s Work Together
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to transform your business? Get in touch with our team today.
+              Ready to transform your business? Get in touch with our team
+              today.
             </p>
           </div>
 
@@ -818,7 +909,9 @@ export default function HomePage() {
                     <Mail className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900">Email Us</h3>
+                    <h3 className="font-semibold text-lg text-gray-900">
+                      Email Us
+                    </h3>
                     <p className="text-gray-600">kavetech@gmail.com</p>
                   </div>
                 </div>
@@ -828,7 +921,9 @@ export default function HomePage() {
                     <Phone className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900">Call Us</h3>
+                    <h3 className="font-semibold text-lg text-gray-900">
+                      Call Us
+                    </h3>
                     <p className="text-gray-600">+254 798 566 564</p>
                   </div>
                 </div>
@@ -838,7 +933,9 @@ export default function HomePage() {
                     <MapPin className="w-6 h-6 text-teal-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900">Visit Us</h3>
+                    <h3 className="font-semibold text-lg text-gray-900">
+                      Visit Us
+                    </h3>
                     <p className="text-gray-600">Westlands, Nairobi, Kenya</p>
                   </div>
                 </div>
@@ -857,26 +954,40 @@ export default function HomePage() {
                 <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
                   <Power className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold text-white">Nairobi Softwares</span>
+                <span className="text-xl font-bold text-white">
+                  Nairobi Softwares
+                </span>
               </div>
-              <p className="text-gray-400">Building the future of Africa through innovative software solutions.</p>
+              <p className="text-gray-400">
+                Building the future of Africa through innovative software
+                solutions.
+              </p>
             </div>
 
             <div>
               <h3 className="font-semibold mb-4 text-white">Services</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     Web Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     Mobile Apps
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     Cloud Solutions
                   </Link>
                 </li>
@@ -887,17 +998,26 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4 text-white">Company</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     Careers
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -908,17 +1028,26 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4 text-white">Connect</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     Twitter
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-teal-400 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-teal-400 transition-colors"
+                  >
                     GitHub
                   </Link>
                 </li>
@@ -927,10 +1056,13 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Nairobi Softwares. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Nairobi Softwares. All rights
+              reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }

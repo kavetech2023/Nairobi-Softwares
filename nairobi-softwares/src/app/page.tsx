@@ -14,7 +14,6 @@ import {
   Smartphone,
   Zap,
   Users,
-  Play,
   Mail,
   Phone,
   MapPin,
@@ -26,7 +25,6 @@ import {
   Car,
   Utensils,
   Quote,
-  X,
   Hexagon,
 } from "lucide-react"
 import Link from "next/link"
@@ -135,7 +133,6 @@ function ContactForm() {
 }
 
 export default function HomePage() {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
 
   const projects = [
   {

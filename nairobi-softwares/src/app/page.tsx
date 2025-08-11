@@ -320,51 +320,30 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl  shadow-2xl backdrop-blur-sm border border-cyan-500/20">
-                
-
-              
-
-                <div className="relative bg-gray-900/90 rounded-2xl p-8 space-y-6 shadow-inner border border-cyan-500/10">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-4 h-4 bg-red-400 rounded-full shadow-lg animate-pulse"></div>
-                    <div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg animate-pulse"></div>
-                    <div className="w-4 h-4 bg-green-400 rounded-full shadow-lg animate-pulse"></div>
-                  </div>
-           <div className="space-y-4">
+          <div className="relative flex flex-col items-center space-y-6 py-12">
   
+  {/* Prominent Image */}
+  <img
+    src="/images/nairobi.png"
+    alt="AI Company"
+    className="w-full max-w-4xl rounded-3xl shadow-lg object-cover"
+  />
 
-
-
-  {/* Embedded Fancy Image */}
-  <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 shadow-xl">
-    <div className="rounded-2xl overflow-hidden bg-red-900">
-      <img
-        src="/images/potrait.png"
-        alt="Placeholder"
-        className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
-      />
-    </div>
-  </div>
-
-  <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
-    <p className="text-base font-medium">
-      &ldquo;Hi! I&rsquo;m your AI assistant. Ready to boost your sales by 300%?&rdquo;
+  {/* Statement Section */}
+  <div className="text-center max-w-2xl space-y-4">
+    <h2 className="text-4xl font-bold text-white">
+      Transforming Businesses with <span className="text-cyan-400">AI Excellence</span>
+    </h2>
+    <p className="text-lg text-gray-300">
+      We’re a leading AI solutions company, helping clients boost sales, capture more leads, 
+      and dominate their markets with cutting-edge technology.
     </p>
   </div>
 
-  <div className="flex items-center justify-between">
-    <div className="text-sm text-cyan-300 font-medium flex items-center">
-      <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-      +127 leads captured today
-    </div>
-  </div>
 </div>
 
-                </div>
-              </div>
-            </div>
+
+
           </div>
         </div>
 

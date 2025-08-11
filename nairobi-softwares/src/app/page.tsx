@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import {
   ArrowRight,
   CheckCircle,
-  Code,
+  Power,
   Smartphone,
   Zap,
   Users,
@@ -28,16 +28,6 @@ import {
   Quote,
   X,
   Hexagon,
-  TrendingUp,
-  Shield,
-  Heart,
-  Star,
-  DollarSign,
-  Activity,
-  BarChart3,
-  Cpu,
-  Database,
-  Globe,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useTransition } from "react"
@@ -233,9 +223,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <Code className="w-5 h-5 text-white" />
+              <Building2 className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">Nairobi Softwares</span>
+            <span className="text-xl font-bold text-white">Nairobi Softwares Company</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
@@ -249,7 +239,7 @@ export default function HomePage() {
               About Us
             </Link>
             <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
-              Contact
+              Contact Us
             </Link>
             <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer">
               <span>Resources</span>
@@ -321,7 +311,7 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  We Don&apos;t Just Build Websites, We{" "}
+                  We Don&apos;t Just Build Software, We{" "}
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                     Build Success
                   </span>
@@ -375,188 +365,48 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Professional Software Development Building */}
             <div className="relative">
-              <div className="relative">
-                {/* Building Structure */}
-                <div
-                  className="relative bg-gradient-to-t from-slate-900 via-slate-800 to-slate-700 rounded-t-3xl shadow-2xl overflow-hidden"
-                  style={{ height: "500px" }}
-                >
-                  {/* Building Foundation/Base */}
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-900 to-slate-800 border-t-2 border-emerald-500/30">
-                    <div className="flex items-center justify-center h-full">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-                          <Code className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="text-sm font-bold text-white">Nairobi Softwares Tower</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 blur-3xl rounded-full animate-pulse"></div>
+              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl p-10 shadow-2xl backdrop-blur-sm border border-cyan-500/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-400/5 rounded-3xl"></div>
 
-                  {/* Floor 1 - Care & Support (Ground Floor) */}
-                  <div className="absolute bottom-16 left-0 right-0 h-20 bg-slate-800/60 border-t border-slate-600/30">
-                    <div className="grid grid-cols-6 h-full">
-                      {/* Windows showing care activities */}
-                      {[...Array(6)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="border-r border-slate-600/20 last:border-r-0 flex items-center justify-center relative group"
-                        >
-                          <div className="w-12 h-12 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-lg flex items-center justify-center hover:from-pink-500/40 hover:to-rose-500/40 transition-all duration-300">
-                            {i === 0 && <Heart className="w-5 h-5 text-pink-400" />}
-                            {i === 1 && <Users className="w-5 h-5 text-pink-400" />}
-                            {i === 2 && <Shield className="w-5 h-5 text-pink-400" />}
-                            {i === 3 && <Phone className="w-5 h-5 text-pink-400" />}
-                            {i === 4 && <Mail className="w-5 h-5 text-pink-400" />}
-                            {i === 5 && <Star className="w-5 h-5 text-pink-400" />}
-                          </div>
-                          {/* Light glow effect */}
-                          <div
-                            className="absolute inset-0 bg-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            style={{ animationDelay: `${i * 0.2}s` }}
-                          ></div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Floor Label */}
-                    <div className="absolute -left-16 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center">
-                      <span className="text-xs font-bold text-pink-400 whitespace-nowrap">24/7 CARE</span>
-                    </div>
-                  </div>
-
-                  {/* Floor 2 - Development Team */}
-                  <div className="absolute bottom-36 left-0 right-0 h-20 bg-slate-800/70 border-t border-slate-600/30">
-                    <div className="grid grid-cols-6 h-full">
-                      {[...Array(6)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="border-r border-slate-600/20 last:border-r-0 flex items-center justify-center relative group"
-                        >
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center hover:from-blue-500/40 hover:to-cyan-500/40 transition-all duration-300">
-                            {i === 0 && <Code className="w-5 h-5 text-cyan-400" />}
-                            {i === 1 && <Cpu className="w-5 h-5 text-cyan-400" />}
-                            {i === 2 && <Database className="w-5 h-5 text-cyan-400" />}
-                            {i === 3 && <Globe className="w-5 h-5 text-cyan-400" />}
-                            {i === 4 && <Smartphone className="w-5 h-5 text-cyan-400" />}
-                            {i === 5 && <Zap className="w-5 h-5 text-cyan-400" />}
-                          </div>
-                          <div
-                            className="absolute inset-0 bg-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            style={{ animationDelay: `${i * 0.15}s` }}
-                          ></div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center">
-                      <span className="text-xs font-bold text-cyan-400 whitespace-nowrap">DEVELOPMENT</span>
-                    </div>
-                  </div>
-
-                  {/* Floor 3 - Profit & Analytics (Top Floor) */}
-                  <div className="absolute bottom-56 left-0 right-0 h-20 bg-slate-800/80 border-t border-slate-600/30">
-                    <div className="grid grid-cols-6 h-full">
-                      {[...Array(6)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="border-r border-slate-600/20 last:border-r-0 flex items-center justify-center relative group"
-                        >
-                          <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center hover:from-green-500/40 hover:to-emerald-500/40 transition-all duration-300">
-                            {i === 0 && <DollarSign className="w-5 h-5 text-green-400" />}
-                            {i === 1 && <TrendingUp className="w-5 h-5 text-green-400" />}
-                            {i === 2 && <BarChart3 className="w-5 h-5 text-green-400" />}
-                            {i === 3 && <Activity className="w-5 h-5 text-green-400" />}
-                            {i === 4 && <Building2 className="w-5 h-5 text-green-400" />}
-                            {i === 5 && <Star className="w-5 h-5 text-green-400" />}
-                          </div>
-                          <div
-                            className="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            style={{ animationDelay: `${i * 0.1}s` }}
-                          ></div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="absolute -left-16 top-1/2 transform -translate-y-1/2 -rotate-90 origin-center">
-                      <span className="text-xs font-bold text-green-400 whitespace-nowrap">PROFITS</span>
-                    </div>
-                  </div>
-
-                  {/* Rooftop - CEO/Executive Level */}
-                  <div className="absolute top-0 left-1/4 right-1/4 h-24 bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-2xl border-2 border-emerald-500/30">
-                    <div className="flex items-center justify-center h-full">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mb-2 mx-auto animate-pulse">
-                          <Star className="w-8 h-8 text-white" />
-                        </div>
-                        <span className="text-xs font-bold text-emerald-400">EXECUTIVE</span>
-                      </div>
-                    </div>
-
-                    {/* Rooftop antennas/satellites */}
-                    <div className="absolute -top-4 left-1/4 w-1 h-4 bg-emerald-400"></div>
-                    <div className="absolute -top-6 left-1/2 w-1 h-6 bg-emerald-400"></div>
-                    <div className="absolute -top-4 right-1/4 w-1 h-4 bg-emerald-400"></div>
-
-                    {/* Blinking lights */}
-                    <div className="absolute -top-2 left-1/4 w-2 h-2 bg-red-400 rounded-full animate-ping"></div>
-                    <div
-                      className="absolute -top-2 right-1/4 w-2 h-2 bg-green-400 rounded-full animate-ping"
-                      style={{ animationDelay: "0.5s" }}
-                    ></div>
-                  </div>
-
-                  {/* Building Metrics Display */}
-                  
-                    <div className="bg-slate-900/80 rounded-xl p-4 backdrop-blur-sm">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-green-400">+347%</div>
-                          <div className="text-xs text-slate-300">Revenue Growth</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-cyan-400">98.7%</div>
-                          <div className="text-xs text-slate-300">Client Success</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-pink-400">24/7</div>
-                          <div className="text-xs text-slate-300">Care & Support</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-emerald-400">48hrs</div>
-                          <div className="text-xs text-slate-300">Delivery Time</div>
-                        </div>
-                      </div>
-                    </div>
-                  
-
-              
-
-                  {/* Data flow between floors */}
-                  <div className="absolute inset-0 pointer-events-none">
-                    {/* Vertical data lines */}
-                    <div className="absolute left-1/6 top-0 bottom-16 w-px bg-gradient-to-b from-emerald-400/0 via-emerald-400/50 to-emerald-400/0"></div>
-                    <div className="absolute left-1/2 top-0 bottom-16 w-px bg-gradient-to-b from-cyan-400/0 via-cyan-400/50 to-cyan-400/0"></div>
-                    <div className="absolute right-1/6 top-0 bottom-16 w-px bg-gradient-to-b from-green-400/0 via-green-400/50 to-green-400/0"></div>
-
-                    {/* Animated data packets */}
-                    {[...Array(3)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-2 h-2 bg-emerald-400 rounded-full animate-pulse"
-                        style={{
-                          left: `${20 + i * 30}%`,
-                          animation: `dataFlow 3s ease-in-out infinite`,
-                          animationDelay: `${i * 1}s`,
-                        }}
-                      ></div>
-                    ))}
+                {/* Floating Code Elements */}
+                <div className="absolute top-4 right-4 w-16 h-16 opacity-30">
+                  <div className="w-full h-full border border-cyan-400 rounded-lg animate-pulse">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full absolute top-1 left-1 animate-ping"></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full absolute bottom-1 right-1 animate-ping"></div>
                   </div>
                 </div>
 
-                {/* Building Shadow */}
-                <div className="absolute -bottom-4 left-2 right-2 h-4 bg-black/20 rounded-full blur-xl"></div>
+                <div className="relative bg-gray-900/90 rounded-2xl p-8 space-y-6 shadow-inner border border-cyan-500/10">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-red-400 rounded-full shadow-lg animate-pulse"></div>
+                    <div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg animate-pulse"></div>
+                    <div className="w-4 h-4 bg-green-400 rounded-full shadow-lg animate-pulse"></div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg"></div>
+                      <div className="text-lg font-semibold text-cyan-200">AI Assistant Active</div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full w-3/4 animate-pulse"></div>
+                      <div className="h-4 bg-gradient-to-r from-cyan-600/50 to-blue-600/50 rounded-full w-1/2 animate-pulse"></div>
+                      <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full w-5/6 animate-pulse"></div>
+                    </div>
+                    <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
+                      <p className="text-base font-medium">
+                        &ldquo;Hi! I&rsquo;m your AI assistant. Ready to boost your sales by 300%?&rdquo;
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-cyan-300 font-medium flex items-center">
+                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                        +127 leads captured today
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -591,13 +441,6 @@ export default function HomePage() {
               opacity: 1;
               transform: scale(1.2);
             }
-          }
-
-          @keyframes dataFlow {
-            0% { transform: translateY(400px); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(0px); opacity: 0; }
           }
         `}</style>
       </section>
@@ -824,7 +667,7 @@ export default function HomePage() {
             <Card className="bg-white border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-teal-500/50">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                  <Code className="w-6 h-6 text-white" />
+                  <Power className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-xl text-gray-900">Cloud Solutions</CardTitle>
                 <CardDescription className="text-gray-600">
@@ -1077,7 +920,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">hello@nairobisoftwares.com</p>
+                    <p className="text-gray-600">kavetech@gmail.com</p>
                   </div>
                 </div>
 
@@ -1087,7 +930,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+254 700 123 456</p>
+                    <p className="text-gray-600">+254 798 566 564</p>
                   </div>
                 </div>
 
@@ -1113,7 +956,7 @@ export default function HomePage() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
-                  <Code className="w-5 h-5 text-white" />
+                  <Power className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold text-white">Nairobi Softwares</span>
               </div>

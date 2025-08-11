@@ -311,9 +311,9 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  We Don&apos;t Just Build Software, We{" "}
+                  We Build Software that{" "}
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                    Build Success
+                    profits you.
                   </span>
                 </h1>
 

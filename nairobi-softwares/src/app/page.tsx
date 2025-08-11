@@ -328,18 +328,6 @@ export default function HomePage() {
     alt="AI Company"
     className="w-full max-w-4xl rounded-3xl shadow-lg object-cover"
   />
-
-  {/* Statement Section */}
-  <div className="text-center max-w-2xl space-y-4">
-    <h2 className="text-4xl font-bold text-white">
-      Transforming Businesses with <span className="text-cyan-400">AI Excellence</span>
-    </h2>
-    <p className="text-lg text-gray-300">
-      We’re a leading AI solutions company, helping clients boost sales, capture more leads, 
-      and dominate their markets with cutting-edge technology.
-    </p>
-  </div>
-
 </div>
 
 

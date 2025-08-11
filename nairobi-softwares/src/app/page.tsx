@@ -385,16 +385,13 @@ export default function HomePage() {
                     <div className="w-4 h-4 bg-green-400 rounded-full shadow-lg animate-pulse"></div>
                   </div>
            <div className="space-y-4">
-  <div className="flex items-center space-x-3">
-    <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg"></div>
-    <div className="text-lg font-semibold text-cyan-200">AI Assistant Active</div>
-  </div>
+  
 
 
 
   {/* Embedded Fancy Image */}
   <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 shadow-xl">
-    <div className="rounded-2xl overflow-hidden bg-gray-900">
+    <div className="rounded-2xl overflow-hidden bg-red-900">
       <img
         src="/images/potrait.png"
         alt="Placeholder"

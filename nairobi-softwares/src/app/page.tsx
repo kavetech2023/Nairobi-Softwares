@@ -384,28 +384,39 @@ export default function HomePage() {
                     <div className="w-4 h-4 bg-yellow-400 rounded-full shadow-lg animate-pulse"></div>
                     <div className="w-4 h-4 bg-green-400 rounded-full shadow-lg animate-pulse"></div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg"></div>
-                      <div className="text-lg font-semibold text-cyan-200">AI Assistant Active</div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full w-3/4 animate-pulse"></div>
-                      <div className="h-4 bg-gradient-to-r from-cyan-600/50 to-blue-600/50 rounded-full w-1/2 animate-pulse"></div>
-                      <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full w-5/6 animate-pulse"></div>
-                    </div>
-                    <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
-                      <p className="text-base font-medium">
-                        &ldquo;Hi! I&rsquo;m your AI assistant. Ready to boost your sales by 300%?&rdquo;
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-cyan-300 font-medium flex items-center">
-                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                        +127 leads captured today
-                      </div>
-                    </div>
-                  </div>
+           <div className="space-y-4">
+  <div className="flex items-center space-x-3">
+    <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg"></div>
+    <div className="text-lg font-semibold text-cyan-200">AI Assistant Active</div>
+  </div>
+
+
+
+  {/* Embedded Fancy Image */}
+  <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 shadow-xl">
+    <div className="rounded-2xl overflow-hidden bg-gray-900">
+      <img
+        src="/images/potrait.png"
+        alt="Placeholder"
+        className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+      />
+    </div>
+  </div>
+
+  <div className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-500 rounded-xl p-4 text-white shadow-lg border border-cyan-400/30">
+    <p className="text-base font-medium">
+      &ldquo;Hi! I&rsquo;m your AI assistant. Ready to boost your sales by 300%?&rdquo;
+    </p>
+  </div>
+
+  <div className="flex items-center justify-between">
+    <div className="text-sm text-cyan-300 font-medium flex items-center">
+      <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+      +127 leads captured today
+    </div>
+  </div>
+</div>
+
                 </div>
               </div>
             </div>
@@ -891,16 +902,25 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-teal-500/10 to-emerald-500/10 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <Users className="w-16 h-16 text-teal-400 mx-auto" />
-                    <div className="text-2xl font-bold text-white">Expert Team</div>
-                    <div className="text-gray-400">15+ Professionals</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div className="aspect-square rounded-2xl overflow-hidden relative">
+    {/* Background image */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: "url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg')" }}
+    />
+
+    {/* Vignette overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-black/30" />
+
+    {/* Content */}
+    <div className="relative z-10 flex items-center justify-center w-full h-full text-center space-y-4 flex-col">
+      <Users className="w-16 h-16 text-teal-400 mx-auto" />
+      <div className="text-2xl font-bold text-white">Expert Team</div>
+      <div className="text-gray-300">15+ Professionals</div>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </section>

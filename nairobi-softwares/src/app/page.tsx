@@ -366,17 +366,8 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 blur-3xl rounded-full animate-pulse"></div>
-              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl p-10 shadow-2xl backdrop-blur-sm border border-cyan-500/20">
+              <div className="relative bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 rounded-3xl shadow-2xl backdrop-blur-sm border border-cyan-500/20">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-400/5 rounded-3xl"></div>
-
-                {/* Floating Code Elements */}
-                <div className="absolute top-4 right-4 w-16 h-16 opacity-30">
-                  <div className="w-full h-full border border-cyan-400 rounded-lg animate-pulse">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full absolute top-1 left-1 animate-ping"></div>
-                    <div className="w-2 h-2 bg-blue-400 rounded-full absolute bottom-1 right-1 animate-ping"></div>
-                  </div>
-                </div>
 
                 <div className="relative bg-gray-900/90 rounded-2xl p-8 space-y-6 shadow-inner border border-cyan-500/10">
                   <div className="flex items-center space-x-3">

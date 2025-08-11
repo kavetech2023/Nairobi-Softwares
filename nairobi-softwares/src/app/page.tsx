@@ -320,7 +320,7 @@ export default function HomePage() {
               </div>
             </div>
 
-          <div className="relative flex flex-col items-center space-y-6 py-12">
+          <div className="relative flex flex-col items-center space-y-6 py-2">
   
   {/* Prominent Image */}
   <img

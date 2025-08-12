@@ -349,7 +349,7 @@ export default function HomePage() {
       <section className="py-20 bg-gray-100 text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h3 className="text-4xl lg:text-5xl font-bold">What do you want to build?</h3>
+            <h3 className="text-4xl lg:text-6xl font-bold">What we build</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Delivering cutting-edge solutions across diverse sectors
             </p>
